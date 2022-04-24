@@ -8,8 +8,7 @@ int WINAPI WinMain(
     LPSTR lpCmdLine,
     int nShowCmd
 ) {
-    WindowManager* window_manager;
-    if (!window_manager->Prepare(hInstance, nShowCmd)) return -1;
+    if (!WindowManager::GetInstance()->Prepare(hInstance, nShowCmd)) return -1;
 
     MSG message = {};
     BOOL ret;

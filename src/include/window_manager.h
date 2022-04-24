@@ -14,16 +14,14 @@ private:
 
 public:
     bool Prepare(HINSTANCE h_instance, int cmd_show);
-    HWND GetButton();
-    void SetButton(HWND button);
+    LRESULT OnWindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 private:
     ATOM InitializeApplication(HINSTANCE h_instance);
 
-public:
-    HINSTANCE h_instance_;
 private:
     static WindowManager* instance_;
     HWND window_handle_;
+    HINSTANCE application_instance_;
     HWND button_;
 };
 
